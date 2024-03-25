@@ -5,4 +5,6 @@ const {handleGenerateShortUrl, handleAnalytics, handleredirectUrl} = require('..
 router.post('/', handleGenerateShortUrl);
 router.get('/analytics/:shortUrl', handleAnalytics);
 router.get('/:shortId', handleredirectUrl);
+
+
 module.exports = router;

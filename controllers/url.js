@@ -10,12 +10,13 @@ const handleGenerateShortUrl = async (req, res) => {
     const shortUrl = shortid.generate();
     await Url.create({
         shortUrl: shortUrl,
-        redirectUrl: body.url,
+        redirectUrl: body.redirectUrl,
         visitHistory: []
     })
-    res.status(200).json({
-        id: shortUrl
-    })
+    // res.status(200).json({
+    //     id: shortUrl
+    // })
+    return res.status(200).render("home", {id: shortUrl});
 }
 
 const handleredirectUrl = async (req, res) => {
